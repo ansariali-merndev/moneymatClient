@@ -70,10 +70,11 @@ export default function Register() {
     }
 
     handleSuccessSwal(res?.message || "Email verified successfully!");
+    await handleAuth();
     router.push("/dashboard");
 
     setOpenOtpmodal(false);
-    await handleAuth();
+
     setFormdata({ name: "", email: "", password: "" });
     setotp("");
   };

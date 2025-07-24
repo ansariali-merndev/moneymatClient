@@ -38,8 +38,9 @@ export default function Login() {
     }
 
     handleSuccessSwal(res?.message || "Login successfully");
-    router.push("/dashboard");
     await handleAuth();
+    router.push("/dashboard");
+
     setFormdata({ email: "", password: "" });
   };
 
