@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import Dashboard from "./(application)/dashboard/page";
+// import Dashboard from "./(application)/dashboard/page";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
           Start Tracking Now <HiArrowNarrowRight />
         </Link>
       </main>
-      <Dashboard />
+      {/* <Dashboard /> */}
     </>
   );
 }
