@@ -112,3 +112,12 @@ export const handleDeleteFinance = async (data) => {
     handleError(error);
   }
 };
+
+export const handleTokenVerify = async (data) => {
+  try {
+    const response = await instance.post("/auth/verifyToken", data);
+    return response.data;
+  } catch (error) {
+    handleError(error);
+  }
+};
