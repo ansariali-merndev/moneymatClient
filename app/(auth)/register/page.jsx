@@ -12,11 +12,9 @@ import PasswordInput from "@/components/PasswordInput";
 import Link from "next/link";
 import { useState } from "react";
 import { handleErrorSwal, handleSuccessSwal } from "@/public/Swal";
-import { useRouter } from "next/navigation";
 import { useUser } from "@/context/UserContext";
 
 export default function Register() {
-  const router = useRouter();
   const [otp, setotp] = useState("");
   const [openOtpmodal, setOpenOtpmodal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -71,7 +69,6 @@ export default function Register() {
 
     handleSuccessSwal(res?.message || "Email verified successfully!");
     await handleAuth();
-    router.push("/dashboard");
 
     setOpenOtpmodal(false);
 

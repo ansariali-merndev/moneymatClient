@@ -6,12 +6,10 @@ import { useUser } from "@/context/UserContext";
 import { handleAuthLogin } from "@/public/axios";
 import { handleErrorSwal, handleSuccessSwal } from "@/public/Swal";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Login() {
   const [formdata, setFormdata] = useState({ email: "", password: "" });
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const { handleAuth } = useUser();
 
@@ -39,7 +37,6 @@ export default function Login() {
 
     handleSuccessSwal(res?.message || "Login successfully");
     await handleAuth();
-    router.push("/");
 
     setFormdata({ email: "", password: "" });
   };
